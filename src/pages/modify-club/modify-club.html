@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="turquoise">
+      <button ion-button menuToggle >
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Modify Club</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-item>
+      <ion-label floating>Club name</ion-label>
+      <ion-input type="text" [(ngModel)]="clubname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text"  [(ngModel)]="clubusername"></ion-input>
+    </ion-item> 
+   
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="clubpassword"></ion-input>
+    </ion-item>
+   <!-- <button ion-button block color="secondary"  full round large (click)="selectPhoto()" >
+     <ion-icon ios="ios-images" md="md-images"  ></ion-icon>
+      Add Logo
+   </button>   
+   <img [src]="clubphoto">  -->
+    <button ion-button block  (click)="modify(club)" large  round>
+      inscription
+    </button>
+
+</ion-content>

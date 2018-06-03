@@ -1,0 +1,42 @@
+
+<ion-header>
+  <ion-navbar color="turquoise">
+    <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>clubs</ion-title>
+</ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <div [ngSwitch]="affichclub"  *ngFor="let club of clubs | async ">
+    <ion-list *ngSwitchCase="'List'" >
+        <ion-card>
+        <ion-item>
+            <ion-avatar item-start>
+                <img [src]="club.img">
+            </ion-avatar>
+  
+          <h2>{{club.clubname}}</h2>
+          <p>{{club.clubusername}}</p>
+          <p>{{club.cluburl}}</p>
+  
+        </ion-item>
+      </ion-card>
+      </ion-list>
+      <ion-list *ngSwitchCase="'Map'" >
+        <div  #map id="my-map"></div>
+       </ion-list>
+    </div>
+    
+    <div class="po">
+        <ion-segment [(ngModel)]="affichclub"  color="turquoise">
+          <ion-segment-button value="List"  >
+            List
+          </ion-segment-button>
+          <ion-segment-button value="Map" >
+            Map
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+</ion-content>

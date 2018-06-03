@@ -1,0 +1,71 @@
+
+
+
+
+
+
+
+<ion-header>
+
+  <ion-navbar color="turquoise">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title> <span  class="p">Page Login</span></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+<ion-content padding style="background-color: #dff8e7" >
+
+  <br><br><br><br>
+  <div >
+    <div class="form">
+      <form class="register-form">
+        <input type="text" placeholder="name"/>
+        <input type="password" placeholder="password"/>
+        <input type="text" placeholder="email address"/>
+        <button>create</button>
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+      </form>
+      <form class="login-form">
+        <input type="text" [(ngModel)]="email"  name="email" placeholder="username"/>
+        <input type="password" [(ngModel)]="pass"  name="pass" placeholder="password"/>
+        <button block color="turquoise" ion-button (click)="EmailLogin()" item-left>Connecter</button>
+        
+      </form>
+     
+    </div>
+  </div>
+
+
+
+  
+<!--   
+<ion-content padding  class="back" >
+      
+    <div class="logBox">
+      <span text-color="my-custom-color" class="p"> Email </span>
+       <ion-item  >
+         <ion-input type="text" placeholder="" [(ngModel)]="club.email"></ion-input>
+       </ion-item>
+       <span text-color="my-custom-color" class="p"> Password </span>
+       <ion-item>
+         <ion-input type="password" placeholder="" [(ngModel)]="club.password"></ion-input>
+       </ion-item>
+       
+       <button ion-button (click)="pushtojegereunclub(club)">Authentifier</button>
+       <button ion-button color="turquoise"  full (click)="connection(club)">Connectter</button>
+     </div> 
+</ion-content> -->
+
+</ion-content>
+
+
+
+
+
+

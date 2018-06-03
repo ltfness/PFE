@@ -1,0 +1,34 @@
+<ion-header>
+<ion-navbar color="turquoise"> 
+  <button ion-button menuToggle>
+    <ion-icon color="black" name="menu"></ion-icon>
+  </button>
+  <ion-title>Event</ion-title> 
+  <ion-buttons  *ngIf="isadmin()"  end>   
+    <button   ion-button icon-only color="black" (click)="PushToAddPage()" >
+      <ion-icon  name="add" color="black" ></ion-icon>
+    </button>
+  </ion-buttons> 
+</ion-navbar>
+</ion-header>
+<ion-content class="bg">
+
+<!-- <ion-searchbar (ionInput)="getItems($event)"  [(ngModel)]="searchText"  (ionClear)="onCancel($event)"></ion-searchbar> -->
+<ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
+<ion-card *ngFor="let ff of eventList" >
+    <ion-buttons end>   
+        <button ion-button  icon-only  style=" background-color: transparent;" *ngIf="isadmin()"  (click)=" presentActionSheet(ff.key)">
+            <ion-icon md="md-more"></ion-icon>
+        </button>
+    </ion-buttons>
+<!-- <img [src]="event.image"> -->
+<span text-color="text_col">
+    title  : {{ ff.title }}
+<h2>  clubname : {{ ff.clubname }}</h2>
+<h2> date : {{ ff.date }} </h2>
+<h2> place : {{ ff.lieu }} </h2>
+<h2> price: {{ff.prix}}</h2>
+</span> 
+
+</ion-card>
+</ion-content>

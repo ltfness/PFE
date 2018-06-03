@@ -1,0 +1,27 @@
+page-events {
+   .bg{
+        background: url(https://i.pinimg.com/originals/d0/11/ea/d011ea4507f56b093d305b3e5b8a6583.jpg)
+        
+     }
+     [text-color="text_col"] {
+        color :teal;
+
+    }
+    [text-color="text_coll"] {
+        color :black;
+        
+    }
+    
+    ion-card.card{
+        background:seashell;
+    }
+
+    button {
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+    }
+}

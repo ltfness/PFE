@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar color="turquoise">
+      <button ion-button menuToggle >
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>liste</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+       
+            <ion-card >
+            <ion-list   *ngFor="let club of clubs | async " >
+            <ion-item >
+              <ion-avatar item-start>
+                    <img [src]="club.img">
+              </ion-avatar>
+      
+              <span text-color="my-custom-color">{{club.clubname}}</span>
+              <p>{{club.clubusername}}</p>
+              <p>{{club.university}}</p>
+      
+            </ion-item>
+          </ion-list>
+          </ion-card>
+           
+</ion-content>

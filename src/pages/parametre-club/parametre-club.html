@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="turquoise">
+      <button ion-button menuToggle >
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>parametreClub</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <br><br>
+    <img [src]="sanitize(Image)" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+    <br><br> <br><br> <br><br>
+  <button   ion-button (click)="modifyClub()"  block color="mauve" >
+    
+    Modify Club
+   </button> 
+   <br><br>
+   <button   ion-button (click)="deleteClub()"  block color="danger" >
+    Delete Club
+   </button> 
+   <br><br>
+<button   ion-button (click)="logout()"  block color="logout" >
+log out
+</button> 
+</ion-content>

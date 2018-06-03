@@ -1,0 +1,25 @@
+
+<ion-header>
+
+  <ion-navbar color="turquoise">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Actualites</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list> 
+        <ion-item *ngFor="let act of acts " >          
+          <ion-thumbnail  item-start>
+                <img [src]="act.image">
+            </ion-thumbnail>    
+          <h2> {{act.club}} a publier </h2>  
+          <p>{{act.title}} </p>
+        </ion-item>
+      </ion-list>
+</ion-content>
+ 

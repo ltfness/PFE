@@ -1,0 +1,95 @@
+import { Component  ,  ViewChild , ElementRef} from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
+import {Geolocation} from '@ionic-native/geolocation';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { forEach } from '@firebase/util';
+import * as firebase from 'firebase';
+declare var  google:any ;
+@IonicPage()
+@Component({
+  selector: 'page-map',
+  templateUrl: 'map.html',
+})
+export class MapPage {
+
+ 
+  adress:string;
+  lat: any;
+  long:any;
+  universite:any;
+  adr : Array<any>=[] ;
+  map:any;
+
+public unRef:firebase.database.Reference;
+ public univRef:firebase.database.Reference;
+  @ViewChild('map') mapRef: ElementRef;
+  
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,private geolocation: Geolocation,
+    private nativeGeocoder: NativeGeocoder, public db: AngularFireDatabase) {     
+  
+      }
+
+  ionViewDidLoad() {
+   this.displayMap();
+  }
+  displayMap(){
+
+    //  let latLng = new google.maps.LatLng(36.809663, 10.185412);
+    
+    
+      this.geolocation.getCurrentPosition().then((resp) => {
+        // resp.coords.latitude
+         this.lat = resp.coords.latitude ; 
+        // resp.coords.longitude
+        this.long = resp.coords.longitude ; 
+        const location = new google.maps.LatLng(this.lat , this.long );
+     
+        var options = {
+          center : location,
+          zoom:15,
+          mapTypeId : google.maps.MapTypeId.ROADMAP
+        };
+        const map = new google.maps.Map(this.mapRef.nativeElement, options); 
+   
+       this.addMarker(location , map);
+        }).catch((error) => {
+          console.log('Error getting location', error);
+        });
+     } 
+     addMarker(position,map){
+     return new google.maps.Marker({
+       position,
+       map,
+       label:"my position"
+     });
+   }
+
+   geocodeAdress(adress){
+      
+  this.nativeGeocoder.forwardGeocode(this.adress).then((res)=>{
+    
+    console.log("information : about lat and long ",res); 
+    
+       this.lat = res[0].latitude;
+  
+      this.long = res[0].longitude;
+  
+      console.log("lat :",this.lat);
+   
+     console.log("long",this.long); 
+    
+     });
+    this.addmarkersMap(this.lat,this.long);
+   }
+   addmarkersMap(lt,lg){
+     var loc = { lt, lg}
+    let marker= new google.maps.Marker({
+      position: loc,
+      map:this.map,
+    })
+   }
+
+}

@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="turquoise">
+      <button  ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      
+    <ion-title>
+      <span text-color="set-color">Setting</span></ion-title>
+    <ion-buttons end>
+      <button  (click)="SettingClub()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg">
+    <button   ion-button (click)="pushtojegereclubpage()" block outline color="dark" >
+        Create your club now !
+       </button> 
+       <button   ion-button (click)="pushtoauthentificationpage()" block outline color="dark" >
+        log in
+       </button> 
+</ion-content>

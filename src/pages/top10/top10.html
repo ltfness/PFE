@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar color="turquoise">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Top10</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  
+      <ion-card  *ngFor="let club of data">
+        
+          <ion-card-header>
+           
+          </ion-card-header>
+        
+          <ion-card-content>
+         <h3> clubname :  {{club.clubname}}</h3> 
+        <h4> top :  {{club.top}}</h4>  
+          </ion-card-content>
+        
+        </ion-card>
+
+</ion-content>

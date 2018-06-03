@@ -1,0 +1,34 @@
+<ion-header color="turquoise">
+    <ion-navbar color="primary">
+      <ion-title>Modify event</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  <ion-list >
+      <ion-item>
+          <ion-label floating>Event Titel</ion-label>
+          <ion-input type="text" [(ngModel)]="title" >{{title}}</ion-input>
+        </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="date" ></ion-datetime>
+    </ion-item>
+  
+    <ion-item>
+   
+      <ion-label floating>lieu  </ion-label>
+      <ion-input type="text" [(ngModel)]="lieu"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Prix Event</ion-label>
+      <ion-input type="number" [(ngModel)]="prix" ></ion-input>
+    </ion-item> 
+    <!-- <button ion-button color="secondary" type="button" full round large (click)="selectPhoto()">
+        <ion-icon name="md-image"></ion-icon>
+      </button> -->
+      <!-- <img [src]="eventphoto">  -->
+    <button ion-button block (click)="editevent(event)" >Modify event</button>   
+  </ion-list> 
+  </ion-content>

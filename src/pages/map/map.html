@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar color="turquoise">
+      <button ion-button menuToggle >
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Clubs</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+ <div #map  id="map"></div>
+ <agm-map  [latitude]="latee" [longitude]="lngee"  [zoom]="zoom">
+  <div *ngFor="let marker of markers ">
+        <agm-marker [latitude]="marker.lat" [longitude]="marker.lng" [label]="marker.label.toString()"></agm-marker>  
+ </div>
+</agm-map>
+
+</ion-content>
